@@ -1,15 +1,15 @@
 # passcore
 
-Lightweight password strength estimator. Drop-in replacement for [zxcvbn](https://github.com/dropbox/zxcvbn) — same API shape, 128x smaller.
+Lightweight password strength estimator. Drop-in replacement for [zxcvbn](https://github.com/dropbox/zxcvbn) — same API shape, 130x smaller than the original.
 
 | | zxcvbn (original) | @zxcvbn-ts/core v4 | passcore |
 |---|---|---|---|
 | Bundle size (gzipped) | 389 KB | 855 KB | **3.0 KB** |
 | Speed | 77,578 ns/op | 839,991 ns/op | **2,622 ns/op** |
 | Detection rate (370 real breach passwords) | 98.4% | 98.4% | **98.4%** |
-| Last published | Active | Active |
-| Language | TypeScript | TypeScript |
-| API | `{ score, feedback }` | `{ score, warning, suggestions }` |
+| Last published | Abandoned (2017) | Active | Active |
+| Language | JavaScript | TypeScript | TypeScript |
+| API | `{ score, feedback }` | `{ score, feedback }` | `{ score, warning, suggestions }` |
 
 ## Install
 
@@ -63,11 +63,11 @@ All five run on every password:
 
 zxcvbn-ts is the right modern choice when you need broad dictionary coverage — 40k+ words, i18n, custom matchers. If that's your requirement, use it.
 
-passcore exists for the 90% case: a sign-up form that needs to block `password123` and `Password1!`, tell the user why, and not add 389 KB to your bundle doing it. The passwords that actually appear in credential stuffing attacks are not obscure literary references — they're the top breach passwords, keyboard walks, and dictionary words with a number tacked on. passcore catches those at a fraction of the cost.
+passcore exists for the 90% case: a sign-up form that needs to block `password123` and `Password1!`, tell the user why, and not add 855 KB to your bundle doing it. The passwords that actually appear in credential stuffing attacks are not obscure literary references — they're the top breach passwords, keyboard walks, and dictionary words with a number tacked on. passcore catches those at a fraction of the cost.
 
 | | zxcvbn-ts (core+common+en) | passcore |
 |---|---|---|
-| Bundle (gzipped) | 389 KB | **3.0 KB** |
+| Bundle (gzipped) | 855 KB | **3.0 KB** |
 | TypeScript | Yes | Yes, native |
 | ESM / tree-shakeable | Yes | Yes |
 | Last updated | Actively maintained | Actively maintained |
@@ -80,7 +80,7 @@ passcore exists for the 90% case: a sign-up form that needs to block `password12
 
 ### SaaS and consumer sign-up forms
 
-This is the 90% case. Your registration form needs to show a strength meter and block `password123`. It does not need to parse 389 KB of word lists to do that. Every millisecond of JS parse time on that page is time before the user can start typing. passcore is 128x smaller than the original zxcvbn and matches both competitors on detection rate — 98.4% across 370 real breach passwords from 5 major breach lists.
+This is the 90% case. Your registration form needs to show a strength meter and block `password123`. It does not need to parse 389 KB of word lists to do that. Every millisecond of JS parse time on that page is time before the user can start typing. passcore is 130x smaller than the original zxcvbn and matches both competitors on detection rate — 98.4% across 370 real breach passwords from 5 major breach lists.
 
 ### React / Vue / Angular SPAs
 
