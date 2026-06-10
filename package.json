@@ -1,0 +1,44 @@
+{
+  "name": "passcorelib",
+  "version": "1.0.0",
+  "description": "Lightweight password strength estimator. Drop-in zxcvbn replacement, same API, under 3kb gzipped.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup && tsc --emitDeclarationOnly --declaration --declarationDir dist --outDir dist",
+    "test": "vitest run",
+    "benchmark": "npx tsx src/benchmark.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "password",
+    "strength",
+    "zxcvbn",
+    "security",
+    "entropy"
+  ],
+  "author": "Fayaz <fmfayaz24@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "@zxcvbn-ts/core": "^4.0.0-beta.4",
+    "@zxcvbn-ts/language-common": "^4.0.0-beta.4",
+    "@zxcvbn-ts/language-en": "^4.0.0-beta.4",
+    "tsup": "^8.5.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8",
+    "zxcvbn": "^4.4.2"
+  }
+}
