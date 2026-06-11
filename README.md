@@ -14,13 +14,13 @@ Lightweight password strength estimator. Drop-in replacement for [zxcvbn](https:
 ## Install
 
 ```sh
-npm install passcore
+npm install passcorelib
 ```
 
 ## Usage
 
 ```ts
-import { passcore } from 'passcore';
+import { passcore } from 'passcorelib';
 
 const result = passcore('hunter2');
 // { score: 1, warning: 'This is a commonly used password.', suggestions: [...] }
