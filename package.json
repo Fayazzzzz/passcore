@@ -1,6 +1,6 @@
 {
   "name": "passcorelib",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Lightweight password strength estimator. Drop-in zxcvbn replacement, same API, under 3kb gzipped.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

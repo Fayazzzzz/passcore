@@ -5,8 +5,8 @@
 | Library                     | Bundle (gzipped) | vs passcore |
 |-----------------------------|------------------|-------------|
 | passcore                    | 3.0 KB           | baseline    |
-| zxcvbn (original, v4.4.2)   | 389.0 KB         | 130x larger |
-| @zxcvbn-ts/core v4 (+ packs)| 855.4 KB         | 286x larger |
+| zxcvbn (original, v4.4.2)   | 389.0 KB         | 131x larger |
+| @zxcvbn-ts/core v4 (+ packs)| 855.4 KB         | 288x larger |
 
 > zxcvbn original: single `zxcvbn.js` file. @zxcvbn-ts: `core` + `language-common` + `language-en` (minimum usable config).
 
@@ -26,9 +26,9 @@ Test set: 370 unique passwords from 5 breach lists (RockYou (2009, 32M accounts)
 
 | Library               | Speed          |
 |-----------------------|----------------|
-| passcore              | 2622 ns/op     |
-| zxcvbn (original)     | 77578 ns/op    |
-| @zxcvbn-ts/core v4    | 839991 ns/op   |
+| passcore              | 2606 ns/op     |
+| zxcvbn (original)     | 75137 ns/op    |
+| @zxcvbn-ts/core v4    | 801066 ns/op   |
 
 ## Methodology
 
@@ -37,4 +37,4 @@ Test set: 370 unique passwords from 5 breach lists (RockYou (2009, 32M accounts)
 - Bundle size: gzip level 9
 - Speed measured over all 376 passwords (breach + controls) cycling
 
-Generated: 2026-06-10T23:08:59.122Z
+Generated: 2026-06-13T17:53:46.860Z
